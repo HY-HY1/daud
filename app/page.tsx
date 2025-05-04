@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { useState } from 'react';
 
 export default function Home() {
-  const [isPlaying, setIsPlaying] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(true);
 
   const togglePlay = () => {
     const audio = document.getElementById('daudy-song') as HTMLAudioElement;
@@ -105,37 +105,7 @@ export default function Home() {
       </section>
 
       {/* Recent Achievements */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">Recent Achievements</h2>
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-gray-50 p-6 rounded-lg shadow-md">
-              <h3 className="text-xl font-semibold mb-4">Road Resurfacing Success</h3>
-              <p>Successfully campaigned for and oversaw the resurfacing of key roads in St Paul's, improving safety and accessibility for all road users.</p>
-              <div className="mt-4 relative h-48 w-full">
-                <Image
-                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSi_n9FIObnzWth_2umabc9Grl5ycM5RU1og&s"
-                  alt="Road resurfacing work in St Paul's"
-                  fill
-                  className="object-cover rounded-lg"
-                />
-              </div>
-            </div>
-            <div className="bg-gray-50 p-6 rounded-lg shadow-md">
-              <h3 className="text-xl font-semibold mb-4">Pavement Safety Improvements</h3>
-              <p>Led a successful campaign to address dangerous pavement conditions, resulting in increased maintenance and improved safety measures for pedestrians.</p>
-              <div className="mt-4 relative h-48 w-full">
-                <Image
-                  src="https://i2-prod.gloucestershirelive.co.uk/incoming/article2474053.ece/ALTERNATES/s615b/0_MW_GLO_250119Pavements_03JPG.jpg"
-                  alt="Daud McDonald inspecting pavement conditions"
-                  fill
-                  className="object-cover rounded-lg"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+
 
       {/* Audio Section */}
       <section className="py-16 bg-blue-900 text-white">
@@ -178,6 +148,38 @@ export default function Home() {
                 }}
                 onEnded={() => setIsPlaying(false)}
               />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center mb-12">Recent Achievements</h2>
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="bg-gray-50 p-6 rounded-lg shadow-md">
+              <h3 className="text-xl font-semibold mb-4">Road Resurfacing Success</h3>
+              <p>Successfully campaigned for and oversaw the resurfacing of key roads in St Paul's, improving safety and accessibility for all road users.</p>
+              <div className="mt-4 relative h-48 w-full">
+                <Image
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSi_n9FIObnzWth_2umabc9Grl5ycM5RU1og&s"
+                  alt="Road resurfacing work in St Paul's"
+                  fill
+                  className="object-cover rounded-lg"
+                />
+              </div>
+            </div>
+            <div className="bg-gray-50 p-6 rounded-lg shadow-md">
+              <h3 className="text-xl font-semibold mb-4">Pavement Safety Improvements</h3>
+              <p>Led a successful campaign to address dangerous pavement conditions, resulting in increased maintenance and improved safety measures for pedestrians.</p>
+              <div className="mt-4 relative h-48 w-full">
+                <Image
+                  src="https://i2-prod.gloucestershirelive.co.uk/incoming/article2474053.ece/ALTERNATES/s615b/0_MW_GLO_250119Pavements_03JPG.jpg"
+                  alt="Daud McDonald inspecting pavement conditions"
+                  fill
+                  className="object-cover rounded-lg"
+                />
+              </div>
             </div>
           </div>
         </div>
