@@ -1,10 +1,10 @@
 export default function Contact() {
   return (
-    <main className="min-h-screen py-16">
+    <main className="min-h-screen py-16 text-white bg-blue-900">
       <div className="container mx-auto px-4">
         <h1 className="text-4xl font-bold mb-8">Contact Daud McDonald</h1>
         
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 gap-8 text-white">
           <div>
             <h2 className="text-2xl font-semibold mb-6">Get in Touch</h2>
             <p className="text-lg mb-6">
@@ -36,8 +36,8 @@ export default function Contact() {
           </div>
           
           <div className="bg-gray-50 p-8 rounded-lg">
-            <h2 className="text-2xl font-semibold mb-6">Send a Message</h2>
-            <form className="space-y-4">
+            <h2 className="text-2xl font-semibold mb-6 text-black">Send a Message</h2>
+            <form className="space-y-4 text-black">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium mb-1">Name</label>
                 <input
