@@ -7,7 +7,7 @@ interface AudioPlayerProps {
   initialPlaying?: boolean;
 }
 
-export default function AudioPlayer({ title, audioUrl, initialPlaying = false }: AudioPlayerProps) {
+export default function AudioPlayer({ title, audioUrl, initialPlaying = true }: AudioPlayerProps) {
   const [isPlaying, setIsPlaying] = useState(initialPlaying);
 
   const togglePlay = () => {
