@@ -3,6 +3,21 @@ import Image from "next/image";
 import Link from 'next/link';
 import AudioPlayer from './components/AudioPlayer';
 
+const people = [
+  {
+    "name": "Wife n Luca mush",
+    "img": "https://media.gettyimages.com/id/807889112/photo/young-local-musician-luca-mcdonald-with-his-mum-isabelle-mcdonald-at-the-mass-busk-in.jpg?s=612x612&w=gi&k=20&c=76_Sw6Zwt_vSCMwvUZMmGNvoeUKdpKEA2FuRg4IWSu8="
+  },
+  {
+    "name": "Me Gardener",
+    "img": "https://media.discordapp.net/attachments/1032640562039357461/1344430131200135259/New_Project.png?ex=68188d61&is=68173be1&hm=2d753738f9c1cd5936c3994af75adb9c6b9c128082d5540d23abb7400d9692d2&=&format=webp&quality=lossless&width=968&height=968"
+  },
+  {
+    "name": "Kushty Jae",
+    "img": "https://media.discordapp.net/attachments/1191492902271062057/1329185918900244642/image.jpg?ex=6818771a&is=6817259a&hm=afe727c42915189d710f7bd38253b02c8dfa5f11283c9b4a387b42b5d8b54f4d&=&format=webp&width=544&height=968"
+  }
+]
+
 export default function Home() {
   return (
     <main className="min-h-screen">
@@ -136,6 +151,25 @@ export default function Home() {
                 />
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="w-full bg-amber-50 h-full">
+        <div className="w-[70vw] m-auto ">
+          <h2 className="text-3xl">Sound Daudy Geezas</h2>
+          <p className="opacity-70 py-4">Lovely mates and family mush</p>
+          <div className="w-full grid grid-cols-3 gap-4 py-4">
+            {
+              people.map((i) => {
+                return (
+                  <div className="w-full h-full object-cover rounded-md shadow-sm">
+                    <h3 className="text-xl">{i.name}</h3>
+                    <img src={i.img} className="w-full p-4" alt="Image" />
+                  </div>
+                )
+              })
+            }
           </div>
         </div>
       </section>
