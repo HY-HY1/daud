@@ -1,23 +1,9 @@
 "use client"
 import Image from "next/image";
 import Link from 'next/link';
-import { useState } from 'react';
+import AudioPlayer from './components/AudioPlayer';
 
 export default function Home() {
-  const [isPlaying, setIsPlaying] = useState(true);
-
-  const togglePlay = () => {
-    const audio = document.getElementById('daudy-song') as HTMLAudioElement;
-    if (audio) {
-      if (isPlaying) {
-        audio.pause();
-      } else {
-        audio.play();
-      }
-      setIsPlaying(!isPlaying);
-    }
-  };
-
   return (
     <main className="min-h-screen">
       {/* Hero Section */}
@@ -104,51 +90,20 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Recent Achievements */}
-
-
       {/* Audio Section */}
       <section className="py-16 bg-blue-900 text-white">
         <div className="container mx-auto px-4">
-          <div className="max-w-2xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-6">My Daudy Song</h2>
-            <div className="bg-white/10 p-6 rounded-lg backdrop-blur-sm">
-              <div className="flex items-center justify-center space-x-4">
-                <button
-                  onClick={togglePlay}
-                  className="w-16 h-16 rounded-full bg-white/20 hover:bg-white/30 transition flex items-center justify-center"
-                >
-                  {isPlaying ? (
-                    <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 9v6m4-6v6m7-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                  ) : (
-                    <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                  )}
-                </button>
-                <div className="flex-1">
-                  <div className="h-2 bg-white/20 rounded-full overflow-hidden">
-                    <div className="h-full bg-white w-0" id="progress-bar"></div>
-                  </div>
-                </div>
-              </div>
-              <audio
-                id="daudy-song"
-                src="https://cdn1.suno.ai/4213deea-0819-47f9-8634-ba50ddfccc35.mp3"
-                onTimeUpdate={(e) => {
-                  const audio = e.currentTarget;
-                  const progressBar = document.getElementById('progress-bar');
-                  if (progressBar) {
-                    const progress = (audio.currentTime / audio.duration) * 100;
-                    progressBar.style.width = `${progress}%`;
-                  }
-                }}
-                onEnded={() => setIsPlaying(false)}
-              />
-            </div>
+          <h2 className="text-3xl font-bold text-center mb-12">My Daudy Songs</h2>
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <AudioPlayer 
+              title="Daudy Song 1" 
+              audioUrl="https://cdn1.suno.ai/4213deea-0819-47f9-8634-ba50ddfccc35.mp3"
+              initialPlaying={true}
+            />
+            <AudioPlayer 
+              title="Daudy Song 2" 
+              audioUrl="https://cdn1.suno.ai/063ecf95-8e8d-43df-82bb-487039ca9fb1.mp3"
+            />
           </div>
         </div>
       </section>
