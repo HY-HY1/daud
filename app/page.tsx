@@ -68,6 +68,42 @@ export default function Home() {
         </div>
       </section>
 
+      {/* I Love Snakes Section */}
+      <section className="py-16 bg-green-800 text-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold text-center mb-8">I Love Snakes</h2>
+            <div className="bg-white/10 p-8 rounded-lg backdrop-blur-sm">
+              <div className="grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                  <h3 className="text-2xl font-semibold mb-4">Daud's Passion for Snakes</h3>
+                  <p className="mb-4">
+                    Daud McDonald has a unique passion for snakes and has been actively involved in snake conservation and education. His love for these fascinating creatures has made him a well-known figure in the local reptile community.
+                  </p>
+                  <p className="mb-4">
+                    "Snakes are misunderstood creatures that play a vital role in our ecosystem. Through education and proper handling, we can learn to appreciate and protect these amazing animals." - Daud McDonald
+                  </p>
+                  <ul className="list-disc list-inside space-y-2">
+                    <li>Regular speaker at local schools about snake conservation</li>
+                    <li>Advocate for responsible snake ownership</li>
+                    <li>Supports local reptile rescue organizations</li>
+                    <li>Promotes snake awareness and safety education</li>
+                  </ul>
+                </div>
+                <div className="relative h-64 md:h-96">
+                  <Image
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRs2HDO6307-uVhAV5I2U2wiguZv3R0y8V0eA&s"
+                    alt="Daud McDonald with a snake"
+                    fill
+                    className="object-cover rounded-lg"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Recent Achievements */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
